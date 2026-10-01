@@ -23,11 +23,10 @@ jobs:
       - name: Compile C++ to EXE
         shell: msys2 {0}
         run: |
-          g++ -std=c++17 -O2 -static hilya.cpp -o hilya.exe
+          g++ -std=c++17 -O2 hilya.cpp -o hilya.exe
 
       - name: Upload EXE
         uses: actions/upload-artifact@v4
         with:
           name: compiled-exe
           path: hilya.exe
-          if-no-files-found: error
